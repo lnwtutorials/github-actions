@@ -14,10 +14,7 @@ jobs:
                 - 80
             volumes:
                 - test_vol:/usr/local/nginx/html
-        steps:
-            - name: Log docker version
-              run: docker version
-            
+        steps:            
             - name: test variable
               run: |
                 echo ${{secrets.DOCKER_USER}}
