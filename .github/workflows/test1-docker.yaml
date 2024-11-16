@@ -30,6 +30,9 @@ jobs:
             image: amd64/busybox
             env:
                 T1: Test
+                USER: ${{secrets.DOCKER_USER}}
+                PASS: ${{env.DOCKER_USER}}
+
             ports:
                 - 80
         steps:
@@ -39,11 +42,24 @@ jobs:
                 entrypoint: echo
                 args: echo hello
 
+            - name: container in steps with scripts
+              uses: docker://amd64/busybox:stable-uclibc
+              with:
+                entrypoint: cat
+                args: test-script.sh
+            
+            - name: container in steps with scripts
+              uses: docker://amd64/busybox:stable-uclibc
+              with:
+                entrypoint: test-script.sh
+                args: Hello World
+
+
             - name: environment test
               run: |
                 echo $T1
-                echo ${{env.DOCKER_USER}}
-                echo ${{env.DOCKER_USER.DOCKER_PASS}}
+                echo $USER
+                echo $PASS
             
         
         
