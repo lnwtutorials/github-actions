@@ -55,7 +55,7 @@ jobs:
             - name: execute scripts -- container in steps with scripts 
               uses: docker://amd64/busybox:stable-uclibc
               with:
-                entrypoint: test-script.sh
+                entrypoint: ./test-script.sh
                 args: Hello World
 
             - name: environment test
