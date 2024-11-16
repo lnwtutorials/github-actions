@@ -10,14 +10,17 @@ jobs:
             #credentials:
                 #username: ${{secrets.DOCKER_USER}}
                 #password: $DOCKER_PASS
+            
             ports:
                 - 80
             volumes:
                 - test_vol:/usr/local/nginx/html
+            env:
+                T1: "Hello World"
         steps:            
             - name: test variable
               run: echo Hello
             - name: test variable
               run: |
                 echo ${{secrets.DOCKER_USER}}
-                echo ${{env.DOCKER_PASS}}
+                echo ${{env.T1}}
