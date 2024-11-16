@@ -16,8 +16,7 @@ jobs:
                 - test_vol:/usr/local/nginx/html
         steps:
             - name: Log docker version
-              run: |
-                docker -v
+              run: docker version
             
             - name: test variable
               run: |
