@@ -33,11 +33,17 @@ jobs:
             ports:
                 - 80
         steps:
+            - name: container in steps
+              uses: docker://amd64/busybox:stable-uclibc
+              with:
+                entrypoint: echo
+                args: echo hello
+
             - name: environment test
               run: |
                 echo $T1
                 echo ${{env.DOCKER_USER}}
-                echo ${{env.DOCKER_PASS}}
+                echo ${{env.DOCKER_USER.DOCKER_PASS}}
             
         
         
