@@ -1,0 +1,19 @@
+name: test1-docker
+on: [push]
+
+jobs:
+    docker-job:
+        runs-on: ubuntu-latest
+        container:
+            image: nginx
+            #credentials:
+                #username: ${{secrets.DOCKER_USER}}
+                #password: $DOCKER_PASS
+            ports:
+                - 80
+            volumes:
+                - test_vol:/usr/local/nginx/html
+        steps:
+            - name: Log docker version
+              run: |
+                docker -v

@@ -1,0 +1,3 @@
+dockerfile has 2 form
+ - shell form  :  ENTRYPOINT node -v
+ - executable form : ENTRYPOINT ["/path/to/node","v"]
