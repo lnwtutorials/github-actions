@@ -7,3 +7,6 @@ dockerfile has 2 form
  don't run[no ci]
  don't run[skip actions]
  don't run[actions skip]
+
+ ACTIONS_STEP_DEBUG=true
+ ACTIONS_RUNNER_DEBUG=true

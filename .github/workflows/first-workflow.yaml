@@ -29,4 +29,4 @@ jobs:
       - name: Error Step
         run: whoami
       - name: Error Step
-        run: doesnotexits
+        run: doesnotexitsz
