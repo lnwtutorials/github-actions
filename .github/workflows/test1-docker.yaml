@@ -33,11 +33,11 @@ jobs:
             ports:
                 - 80
         steps:
-            - name: os info
+            - name: environment test
               run: |
-                cat /etc/os-release
-                uptime
-            - name: Log env T1
-              run: echo $T1
+                echo $T1
+                echo ${{env.DOCKER_USER}}
+                echo ${{env.DOCKER_PASS}}
+            
         
         
