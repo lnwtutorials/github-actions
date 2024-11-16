@@ -1,3 +1,9 @@
 dockerfile has 2 form
  - shell form  :  ENTRYPOINT node -v
  - executable form : ENTRYPOINT ["/path/to/node","v"]
+
+ don't run[skip ci]
+ don't run[ci skip]
+ don't run[no ci]
+ don't run[skip actions]
+ don't run[actions skip]
