@@ -16,6 +16,8 @@ jobs:
                 - test_vol:/usr/local/nginx/html
         steps:            
             - name: test variable
+              run: echo Hello
+            - name: test variable
               run: |
                 echo ${{secrets.DOCKER_USER}}
                 echo ${{env.DOCKER_PASS}}
