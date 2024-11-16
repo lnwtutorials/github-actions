@@ -3,7 +3,8 @@ on: [push]
 
 jobs:
     docker-job:
-        runs-on: ubuntu-latest
+        #runs-on: ubuntu-latest
+        runs-on: self-hosted
         container:
             image: nginx
             #credentials:
@@ -17,3 +18,8 @@ jobs:
             - name: Log docker version
               run: |
                 docker -v
+            
+            - name: test variable
+              run: |
+                echo ${{secrets.DOCKER_USER}}
+                echo ${{env.DOCKER_PASS}}
