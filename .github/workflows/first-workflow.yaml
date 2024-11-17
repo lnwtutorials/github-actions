@@ -38,7 +38,7 @@ jobs:
       - name: display_working_dir
         run: |
           #pwd
-          Get-Locations
+          Get-Location
           dir
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
@@ -48,4 +48,4 @@ jobs:
         shell: python
         run: |
           import platform
-          print (plaform.processor())
+          print(plaform.processor())
