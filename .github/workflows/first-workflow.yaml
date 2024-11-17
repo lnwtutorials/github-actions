@@ -1,6 +1,9 @@
 name: First Workflow
 #on: [push]
 on: [workflow_dispatch]
+defaults:
+  run:
+    shell: bash
 
 jobs:
   run-shell-commands:
@@ -20,13 +23,29 @@ jobs:
       - name: View SW Version
         run: sw_vers
 
-  dependant-job:
+  dependant-job:    
     runs-on: windows-latest
     needs: run-shell-commands
+    defaults:
+      run:
+        shell: pwsh
     steps:
       - name: echo a string
         run: Write-Output "Windows String"
-      - name: Error Step
-        run: whoami
-      - name: Error Step
-        run: doesnotexitsz
+      #- name: Error Step
+      #  run: doesnotexitsz
+      
+      - name: display_working_dir
+        run: |
+          #pwd
+          Get-Locations
+          dir
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+
+      - name: python shells
+        shell: python
+        run: |
+          import platform
+          print (plaform.processor())

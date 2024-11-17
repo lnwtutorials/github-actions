@@ -10,3 +10,10 @@ dockerfile has 2 form
 
  ACTIONS_STEP_DEBUG=true
  ACTIONS_RUNNER_DEBUG=true
+
+
+ pwd
+ ls -a
+ echo $GITHUB_SHA
+ echo $GITHUB_REPOSITORY
+ echo $GITHUB_WORKSPACE
