@@ -48,4 +48,4 @@ jobs:
         shell: python
         run: |
           import platform
-          print(plaform.processor())
+          print(platform.processor())
