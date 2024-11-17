@@ -1,6 +1,6 @@
 name: First Workflow
-#on: [push]
-on: [workflow_dispatch]
+on: [push]
+#on: [workflow_dispatch]
 defaults:
   run:
     shell: bash
@@ -34,7 +34,7 @@ jobs:
         run: Write-Output "Windows String"
       #- name: Error Step
       #  run: doesnotexitsz
-      
+
       - name: display_working_dir
         run: |
           #pwd
