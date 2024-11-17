@@ -1,5 +1,5 @@
 name: test1-docker
-on: [push]
+on: [workflow_dispatch]
 
 jobs:
     docker-job:
@@ -25,7 +25,7 @@ jobs:
                 echo ${{env.T1}}
 
     ubuntu-sleeper:
-        runs-on: lab-runner
+        runs-on: ubuntu-latest
         container: 
             image: amd64/busybox
             env:
