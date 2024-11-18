@@ -1,0 +1,12 @@
+name: Repo Events
+on: [push, pull_request]
+
+jobs:
+    checkout-tests:
+      runs-on: ubuntu-latest
+      steps:
+        - name: checkout event test
+          run: |
+            eccho $GITHUB_SHA
+            eccho $GITHUB_REF
+        - uses: actions/checkout@v4
