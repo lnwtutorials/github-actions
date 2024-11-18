@@ -7,6 +7,6 @@ jobs:
       steps:
         - name: checkout event test
           run: |
-            eccho $GITHUB_SHA
-            eccho $GITHUB_REF
+            echo $GITHUB_SHA
+            echo $GITHUB_REF
         - uses: actions/checkout@v4
