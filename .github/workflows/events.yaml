@@ -1,5 +1,5 @@
 name: Repo Events
-on: [push, pull_request]
+on: [push, pull_request, issues]
 
 jobs:
     checkout-tests:
