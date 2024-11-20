@@ -1,0 +1,39 @@
+name: Mannual Trigger
+on:
+    workflow_dispatch:
+        inputs:
+            string:
+                description: A string
+                type: string
+                required: true
+                default: "Default value"
+            environment:
+                description: "Environment"
+                type: environment
+                required: true
+                default: "Testbed"
+            options:
+                description: "Input options"
+                required: true
+                type: choice
+                options:
+                    - op1
+                    - op2
+            boolean:
+                description: ""
+                required: false
+                type: boolean
+            number:
+                description: ""
+                default: 2
+                type: number
+
+jobs:
+    log-info:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo $GITHUB_REF
+            - run: |
+                echo "String: ${{inputs.string}}"
+                echo "Environment: ${{inputs.environment}}"
+    
